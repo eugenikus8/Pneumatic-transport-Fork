@@ -1,3 +1,16 @@
+Version 2.0.1
+Date: 2024-11-06
+
+  Fixes:
+    - Support 2.0
+
+  Known issues:
+    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
+
+  Broken:
+    - Sprites are not visible in the game (pneumatic in/out buildings (or liquidation / solidification buildings). And I don't know why. 
+
+---------------------------------------------------------------------------------------------------
 Version 1.1.7
 Date: 2023-10-27
   Fixes:
