@@ -3,7 +3,7 @@
 Mod by Saienai<br>
 https://mods.factorio.com/mod/pneumatic-transport
 
-# Pneumatic Transport Fork
+# Pneumatic Transport Fork (for Factorio 2.0)
 #### Removes all belts and adds pneumatic in/out stations (with built in inserters) that convert any/all items into fluid-like states for transport through pipes. Alternative lore: LIQUIFY EVERYTHING!!!!
 
 ![76825a51b5a36f5e9959a69cc299f5a0b1187b22](https://github.com/user-attachments/assets/613b444c-4bc1-47fd-bc05-af2034ac571b)
