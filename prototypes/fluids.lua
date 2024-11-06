@@ -88,7 +88,7 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
       pneumaticFluid.icons = { {icon = item.icon, icon_size = item.icon_size} }
     end
 
-    table.insert(pneumaticFluid.icons, {icon = "__pneumatic-transport__/graphics/icon/fluids/water.png", icon_mipmaps = 4, icon_size = 64, scale = 0.25})
+    table.insert(pneumaticFluid.icons, {icon = "__pneumatic-transport__/graphics/icon/fluids/water.png", icon_mipmaps = 4, icon_size = 64, scale = 0.25, shift = {12, 9}})
   end
 
   table.insert(pneumaticFluids, pneumaticFluid)
@@ -103,9 +103,9 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
     type = "recipe",
     name = "pneumatic-liquify-"..name,
     energy_required = 0.4,
-    enabled = "true",
-    hide_from_player_crafting = "true",
-    hide_from_stats = "true",
+    enabled = true,
+    hide_from_player_crafting = true,
+    hide_from_stats = true,
     ingredients = {
       { type = "item", name = name, amount = quantity },
     },
@@ -125,9 +125,9 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
     type = "recipe",
     name = "pneumatic-solidify-"..name,
     energy_required = 0.4,
-    enabled = "true",
-    hide_from_player_crafting = "true",
-    hide_from_stats = "true",
+    enabled = true,
+    hide_from_player_crafting = true,
+    hide_from_stats = true,
     results = {
       { type = "item", name = name, amount = quantity },
     },
