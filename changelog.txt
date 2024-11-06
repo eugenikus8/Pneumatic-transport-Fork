@@ -1,0 +1,60 @@
+Version 1.1.7
+Date: 2023-10-27
+  Fixes:
+    - fixed dfs search infinite loop (no longer crashing no start due to mod incompatibilities)
+    - rocket silo added to liquify list
+    - repair packs added to liquify list
+    - se: rocket science pack added to liquify list (as exception - cant find root cause of failure)
+	- updated hidden inserter flags (should no longer show up in upgrade screen)
+  Changes:
+    - set fluid storage in fluidizer/solidifier to 150 (15 items at default settings)
+	- added settings to vary recipe & fluid quantities (10/recipe & 10 fluid per item as defaults)
+    - added setting to vary hidden inserter stack size (10 default) to be able to edit buffer sizing (global)
+    - added 'heavy item' option (1/recipe & 100 fluid per item), currently includes only U235 & rocket silo, but you can add your own (comma delimiter)
+  Broken:
+    - Still cant figure out why K2SE is causing a bunch of issues (recipes hidden, items not fluidized, etc.) - for now K2SE isnt supported unless either I or someone else figures out whats going on.
+  TODO:
+    - changing settings (recipe/fluid quantities, hidden inserter stack size) has no impact on already placed entities. Need to add a settings-changed-check & update. For now its recommended to set the settings up and not change them during gameplay
+
+Version: 1.1.6
+Date: 2023-07-12
+  Fixes:
+    - Placement of solidifier/liquifier should now be done correctly with autobuild / nanobots / other script-based-construction
+  Changes:
+    - Added color to the fluids (@GeggsLegs)
+---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+Date: 2023-07-10
+  Fixes:
+    - Repair packs & vehicles should now be able to be fluidized
+  Changes:
+    - Limited the input of fluidizers to 2x recipe (so 20 max instead of original 100)
+    - Names changed to 'fluidizer' and 'solidifier' for clarity
+  Breaking changes:
+    - Input limits may mean that updating an existing save will cause item loss (100->20) in full fluidizers
+---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+Date: 2023-06-08
+  Fixes:
+    - Fixed crash related to item -> fluid conversion for items with no set 'order' value
+---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+Date: 23-06-07
+  Fixes:
+    - Compatibility with Space Exploration (no longer crashes the game after rocket launch, entities now placeable in space)
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 23-05-05
+  Fixes:
+    - Compatibility with picker dollies was broken unless the game was saved and loaded at least once (missing on_init trigger)
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2023-05-05
+  Features:
+    - Added a non-filtered input building (and renamed original input building to 'filtered')
+    - Added quick-replace for pneumatic buildings
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2023-05-04
+  Features:
+    - Initial release
