@@ -30,11 +30,11 @@ data:extend({
     hand_closed_picture = empty_sheet,
     
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-    collision_mask = {},
+    collision_mask = { layers = { } }, -- collide with nothing
     --selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 	
 	selectable_in_game = false,
-	flags={"not-on-map","not-blueprintable","not-deconstructable","hidden","not-flammable"},
+	flags={"not-on-map","not-blueprintable","not-deconstructable", "not-in-made-in","not-flammable"},
   },
 
   {
@@ -60,11 +60,11 @@ data:extend({
     hand_closed_picture = empty_sheet,
     
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-    collision_mask = {},
+    collision_mask = { layers = { } }, -- collide with nothing
     --selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 	
 	selectable_in_game = false,
-	flags={"not-on-map","not-blueprintable","not-deconstructable","hidden","not-flammable"},
+	flags={"not-on-map","not-blueprintable","not-deconstructable", "not-in-made-in","not-flammable"},
   },
 
   {
@@ -89,15 +89,15 @@ data:extend({
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 0.03 * 60,
+      emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "20kW",
     ingredient_count = 1,
     animation = {
       north = {
         filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-up.png",
-        width = "66",
-        height = "72",
+        width = 66,
+        height = 72,
         frame_count = 1,
         shift = {0.05,0},
       },
@@ -111,8 +111,8 @@ data:extend({
       },
       south = {
         filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-down.png",
-        width = "66",
-        height = "72",
+        width = 66,
+        height = 72,
         frame_count = 1,
         shift = {-0.05,0},
       },
@@ -127,20 +127,18 @@ data:extend({
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
-      sound = { filename = "__base__/sound/oil-refinery.ogg" },
-      idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
-      apparent_volume = 0.5,
+      sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      max_sounds_per_type = 1
     },
     fluid_boxes = {
-      {
+    {
         production_type = "output",
         pipe_covers = pipecoverspictures(),
-        base_level = 1.5,
-        height = 1,
-        pipe_connections = { { type = "output", position = { 0, -1 } } },
-      },
+        volume = 100,
+        pipe_connections = { { flow_direction="output", direction = defines.direction.north, position = {0, 0} } },
     },
   },
+},
 
   {
     type = "furnace",
@@ -164,15 +162,15 @@ data:extend({
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 0.03 * 60,
+      emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "20kW",
     ingredient_count = 1,
     animation = {
       north = {
         filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-up.png",
-        width = "66",
-        height = "72",
+        width = 66,
+        height = 72,
         frame_count = 1,
         shift = {0.05,0},
       },
@@ -186,8 +184,8 @@ data:extend({
       },
       south = {
         filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-down.png",
-        width = "66",
-        height = "72",
+        width = 66,
+        height = 72,
         frame_count = 1,
         shift = {-0.05,0},
       },
@@ -202,17 +200,15 @@ data:extend({
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
-      sound = { filename = "__base__/sound/oil-refinery.ogg" },
-      idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
-      apparent_volume = 0.5,
+      sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      max_sounds_per_type = 1
     },
     fluid_boxes = {
       {
         production_type = "output",
         pipe_covers = pipecoverspictures(),
-        base_level = 1.5,
-        height = 1,
-        pipe_connections = { { type = "output", position = { 0, -1 } } },
+        volume = 100,
+        pipe_connections = { { flow_direction="output", direction = defines.direction.north, position = {0, 0} } },
       },
     },
   },
@@ -239,15 +235,15 @@ data:extend({
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 0.03 * 60,
+      emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "20kW",
     ingredient_count = 1,
     animation = {
       north = {
         filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-up.png",
-        width = "66",
-        height = "72",
+        width = 66,
+        height = 72,
         frame_count = 1,
         shift = {0.05,0},
       },
@@ -261,8 +257,8 @@ data:extend({
       },
       south = {
         filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-down.png",
-        width = "66",
-        height = "72",
+        width = 66,
+        height = 72,
         frame_count = 1,
         shift = {-0.05,0},
       },
@@ -277,18 +273,16 @@ data:extend({
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
-      sound = { filename = "__base__/sound/oil-refinery.ogg" },
-      idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
-      apparent_volume = 0.5,
+      sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      max_sounds_per_type = 1
     },
     fluid_boxes = {
       {
         production_type = "input",
-        pipe_covers = pipecoverspictures(),
-        base_area = 1.5,
-        base_level = -1,
-        pipe_connections = { { type = "input", position = { 0, -1 } } },
-      },
+		pipe_covers = pipecoverspictures(),
+        volume = 100,
+        pipe_connections = { { flow_direction="input", direction = defines.direction.north, position = {0, 0} } },
     },
   },
+},
 })
