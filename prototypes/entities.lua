@@ -34,7 +34,7 @@ data:extend({
     --selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 	
 	selectable_in_game = false,
-	flags={"not-on-map","not-blueprintable","not-deconstructable", "not-in-made-in","not-flammable"},
+	flags={"not-on-map","not-blueprintable","not-deconstructable","not-flammable"},
   },
 
   {
@@ -64,7 +64,7 @@ data:extend({
     --selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 	
 	selectable_in_game = false,
-	flags={"not-on-map","not-blueprintable","not-deconstructable", "not-in-made-in","not-flammable"},
+	flags={"not-on-map","not-blueprintable","not-deconstructable","not-flammable"},
   },
 
   {
@@ -93,36 +93,38 @@ data:extend({
     },
     energy_usage = "20kW",
     ingredient_count = 1,
-    animation = {
-      north = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-up.png",
-        width = 66,
-        height = 72,
-        frame_count = 1,
-        shift = {0.05,0},
-      },
-      east = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-right.png",
-        priority = "extra-high",
-        width = 46,
-        height = 46,
-        frame_count = 1,
-        shift = {0.03125, 0}
-      },
-      south = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-down.png",
-        width = 66,
-        height = 72,
-        frame_count = 1,
-        shift = {-0.05,0},
-      },
-      west = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-left.png",
-        priority = "extra-high",
-        width = 46,
-        height = 46,
-        frame_count = 1,
-        shift = {-0.03125, 0}
+    graphics_set = {
+      animation = {
+        north = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-up.png",
+          width = 66,
+          height = 74,
+          frame_count = 1,
+          shift = {0.05,0},
+        },
+        east = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-right.png",
+          priority = "extra-high",
+          width = 46,
+          height = 46,
+          frame_count = 1,
+          shift = {0.03125, 0}
+        },
+        south = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-down.png",
+          width = 66,
+          height = 72,
+          frame_count = 1,
+          shift = {-0.05,0},
+        },
+        west = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake-filtered/intake-filtered-left.png",
+          priority = "extra-high",
+          width = 46,
+          height = 46,
+          frame_count = 1,
+          shift = {-0.03125, 0}
+        },
       },
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -135,7 +137,7 @@ data:extend({
         production_type = "output",
         pipe_covers = pipecoverspictures(),
         volume = 100,
-        pipe_connections = { { flow_direction="output", direction = defines.direction.north, position = {0, 0} } },
+        pipe_connections = { { flow_direction="output", direction = 0, position = {0, 0} } },
     },
   },
 },
@@ -166,36 +168,38 @@ data:extend({
     },
     energy_usage = "20kW",
     ingredient_count = 1,
-    animation = {
-      north = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-up.png",
-        width = 66,
-        height = 72,
-        frame_count = 1,
-        shift = {0.05,0},
-      },
-      east = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-right.png",
-        priority = "extra-high",
-        width = 46,
-        height = 46,
-        frame_count = 1,
-        shift = {0.03125, 0}
-      },
-      south = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-down.png",
-        width = 66,
-        height = 72,
-        frame_count = 1,
-        shift = {-0.05,0},
-      },
-      west = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-left.png",
-        priority = "extra-high",
-        width = 46,
-        height = 46,
-        frame_count = 1,
-        shift = {-0.03125, 0}
+    graphics_set = {
+      animation = {
+        north = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-up.png",
+          width = 66,
+          height = 74,
+          frame_count = 1,
+          shift = {0.05, 0},
+        },
+        east = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-right.png",
+          priority = "extra-high",
+          width = 46,
+          height = 46,
+          frame_count = 1,
+          shift = {0.03125, 0}
+        },
+        south = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-down.png",
+          width = 66,
+          height = 72,
+          frame_count = 1,
+          shift = {-0.05, 0},
+        },
+        west = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-intake/intake-left.png",
+          priority = "extra-high",
+          width = 46,
+          height = 46,
+          frame_count = 1,
+          shift = {-0.03125, 0}
+        },
       },
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -208,7 +212,7 @@ data:extend({
         production_type = "output",
         pipe_covers = pipecoverspictures(),
         volume = 100,
-        pipe_connections = { { flow_direction="output", direction = defines.direction.north, position = {0, 0} } },
+        pipe_connections = { { flow_direction="output", direction = 0, position = {0, 0} } },
       },
     },
   },
@@ -239,36 +243,38 @@ data:extend({
     },
     energy_usage = "20kW",
     ingredient_count = 1,
-    animation = {
-      north = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-up.png",
-        width = 66,
-        height = 72,
-        frame_count = 1,
-        shift = {0.05,0},
-      },
-      east = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-right.png",
-        priority = "extra-high",
-        width = 46,
-        height = 46,
-        frame_count = 1,
-        shift = {0.03125, 0}
-      },
-      south = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-down.png",
-        width = 66,
-        height = 72,
-        frame_count = 1,
-        shift = {-0.05,0},
-      },
-      west = {
-        filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-left.png",
-        priority = "extra-high",
-        width = 46,
-        height = 46,
-        frame_count = 1,
-        shift = {-0.03125, 0}
+    graphics_set = {
+      animation = {
+        north = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-up.png",
+          width = 66,
+          height = 74,
+          frame_count = 1,
+          shift = {0.05,0},
+        },
+        east = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-right.png",
+          priority = "extra-high",
+          width = 46,
+          height = 46,
+          frame_count = 1,
+          shift = {0.03125, 0}
+        },
+        south = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-down.png",
+          width = 66,
+          height = 72,
+          frame_count = 1,
+          shift = {-0.05,0},
+        },
+        west = {
+          filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake/outtake-left.png",
+          priority = "extra-high",
+          width = 46,
+          height = 46,
+          frame_count = 1,
+          shift = {-0.03125, 0}
+        },
       },
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -279,10 +285,10 @@ data:extend({
     fluid_boxes = {
       {
         production_type = "input",
-		pipe_covers = pipecoverspictures(),
+        pipe_covers = pipecoverspictures(),
         volume = 100,
-        pipe_connections = { { flow_direction="input", direction = defines.direction.north, position = {0, 0} } },
+        pipe_connections = { { flow_direction="input", direction = 0, position = {0, 0} } },
+      },
     },
   },
-},
 })
