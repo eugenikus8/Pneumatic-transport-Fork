@@ -52,3 +52,4 @@ Items are converted at a 1:10 ratio, giving pipes an average throughput of 100 i
 > [!WARNING]
 > ### Known issues 2.0 (Space Age):
 > - Quality does not support fluids. All items with quality when liquefied will be converted to normal quality
+> - Space platform does not install hidden inserter
