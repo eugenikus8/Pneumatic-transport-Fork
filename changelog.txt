@@ -1,3 +1,13 @@
+Version 2.0.3
+Date: 2024-11-11
+
+  Changes:
+    - Add setting to ignore bottleneck indicator
+
+  Known issues:
+    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
+
+---------------------------------------------------------------------------------------------------
 Version 2.0.2
 Date: 2024-11-11
 
