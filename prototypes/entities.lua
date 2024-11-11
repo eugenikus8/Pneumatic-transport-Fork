@@ -86,6 +86,7 @@ data:extend({
     --source_inventory_size = 1,
     --ingredient_count = nil,
     se_allow_in_space = true,
+    bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
@@ -130,6 +131,7 @@ data:extend({
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
       sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      audible_distance_modifier = 0.5,
       max_sounds_per_type = 1
     },
     fluid_boxes = {
@@ -161,6 +163,7 @@ data:extend({
     source_inventory_size = 1,
     ingredient_count = nil,
     se_allow_in_space = true,
+    bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
@@ -205,6 +208,7 @@ data:extend({
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
       sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      audible_distance_modifier = 0.5,
       max_sounds_per_type = 1
     },
     fluid_boxes = {
@@ -236,6 +240,7 @@ data:extend({
     source_inventory_size = 0,
     ingredient_count = nil,
     se_allow_in_space = true,
+    bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
@@ -280,6 +285,7 @@ data:extend({
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
       sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      audible_distance_modifier = 0.5,
       max_sounds_per_type = 1
     },
     fluid_boxes = {
