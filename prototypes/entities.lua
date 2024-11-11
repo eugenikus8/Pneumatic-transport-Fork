@@ -131,6 +131,7 @@ data:extend({
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
       sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      audible_distance_modifier = 0.5,
       max_sounds_per_type = 1
     },
     fluid_boxes = {
@@ -207,6 +208,7 @@ data:extend({
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
       sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      audible_distance_modifier = 0.5,
       max_sounds_per_type = 1
     },
     fluid_boxes = {
@@ -283,6 +285,7 @@ data:extend({
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
       sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      audible_distance_modifier = 0.5,
       max_sounds_per_type = 1
     },
     fluid_boxes = {
