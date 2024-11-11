@@ -64,4 +64,11 @@ data:extend{
 	allow_blank = true,
     order = "pneumatic-5",
   },
+  {
+    type = "bool-setting",
+    name = "pneumatic-bottleneck-ignore",
+    setting_type = "startup",
+    default_value = true,
+    order = "pneumatic-0",
+  },
 }
