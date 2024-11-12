@@ -32,9 +32,9 @@ data:extend({
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     collision_mask = { layers = { } }, -- collide with nothing
     --selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-	
-	selectable_in_game = false,
-	flags={"not-on-map","not-blueprintable","not-deconstructable","not-flammable"},
+    hidden = true,
+    selectable_in_game = false,
+    flags={"not-on-map","not-blueprintable","not-deconstructable","not-flammable"},
   },
 
   {
@@ -62,9 +62,9 @@ data:extend({
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     collision_mask = { layers = { } }, -- collide with nothing
     --selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-	
-	selectable_in_game = false,
-	flags={"not-on-map","not-blueprintable","not-deconstructable","not-flammable"},
+    hidden = true,
+    selectable_in_game = false,
+    flags={"not-on-map","not-blueprintable","not-deconstructable","not-flammable"},
   },
 
   {
@@ -130,9 +130,9 @@ data:extend({
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
-      sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      sound = { filename = "__base__/sound/pump.ogg", volume = 1 },
       audible_distance_modifier = 0.5,
-      max_sounds_per_type = 1
+      max_sounds_per_type = 3
     },
     fluid_boxes = {
     {
@@ -207,9 +207,9 @@ data:extend({
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
-      sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      sound = { filename = "__base__/sound/pump.ogg", volume = 1 },
       audible_distance_modifier = 0.5,
-      max_sounds_per_type = 1
+      max_sounds_per_type = 3
     },
     fluid_boxes = {
       {
@@ -284,9 +284,9 @@ data:extend({
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound = {
-      sound = { filename = "__base__/sound/pump.ogg", volume = 0.3 },
+      sound = { filename = "__base__/sound/pump.ogg", volume = 1 },
       audible_distance_modifier = 0.5,
-      max_sounds_per_type = 1
+      max_sounds_per_type = 3
     },
     fluid_boxes = {
       {
