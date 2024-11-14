@@ -78,7 +78,8 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
 
   pneumaticFluid.type = "fluid"
   pneumaticFluid.name = "pneumatic-" .. item.name
-  pneumaticFluid.base_color = {0, 0, 0}
+  -- pneumaticFluid.base_color = {0, 0, 0}
+  pneumaticFluid.base_color = {math.random(), math.random(), math.random()} 
   pneumaticFluid.default_temperature = 15
   pneumaticFluid.flow_color = {1, 1, 1}
   pneumaticFluid.subgroup = "pneumatic-" .. (item.subgroup or "other")
