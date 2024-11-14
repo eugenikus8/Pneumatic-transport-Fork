@@ -1,3 +1,14 @@
+Version 2.0.4
+Date: 2024-11-14
+
+  Changes:
+    - Random color fluids
+
+  Known issues:
+    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
+
+---------------------------------------------------------------------------------------------------
+
 Version 2.0.3
 Date: 2024-11-11
 
