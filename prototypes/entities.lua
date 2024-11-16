@@ -245,7 +245,7 @@ data:extend({
    bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
    energy_source = {
       type = "electric",
-      usage_priority = "secondary-input",
+      usage_priority = "primary-input",
       emissions_per_minute = { pollution = 2 },
    },
    energy_usage = "19kW",
