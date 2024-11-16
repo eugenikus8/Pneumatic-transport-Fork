@@ -1,5 +1,7 @@
 boardname = "electronic-circuit"
-if data.raw.item["basic-circuit-board"] then boardname = "basic-circuit-board" end
+if data.raw.item["basic-circuit-board"] then
+   boardname = "basic-circuit-board"
+end
 
 data:extend({
   {
