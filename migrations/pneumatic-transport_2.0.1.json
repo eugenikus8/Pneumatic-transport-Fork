@@ -1,0 +1,8 @@
+{
+   "entity":
+   [
+      ["pneumatic-end-point-intake", "pneumatic-intake"],
+      ["pneumatic-end-point-outtake", "pneumatic-outtake"],
+      ["pneumatic-end-point-intake-filtered", "pneumatic-intake-filtered"]
+   ]
+}
