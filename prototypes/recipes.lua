@@ -1,7 +1,11 @@
 boardname = "electronic-circuit"
-if data.raw.item["basic-circuit-board"] then
-   boardname = "basic-circuit-board"
+if mods["pyhightech"] then
+   boardname = "inductor1" else
+   if data.raw.item["basic-circuit-board"] then
+      boardname = "basic-circuit-board"
+   end
 end
+
 
 data:extend({
   {
