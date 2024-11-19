@@ -1,3 +1,14 @@
+Version 2.0.5
+Date: 2024-11-20
+
+  Changes:
+    - add crafting speed setup
+
+  Known issues:
+    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
+
+---------------------------------------------------------------------------------------------------
+
 Version 2.0.4
 Date: 2024-11-14
 
