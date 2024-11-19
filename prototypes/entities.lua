@@ -6,6 +6,10 @@ local empty_sheet = {
    frame_count = 1,
 }
 
+local crafting_speed = settings.startup["pneumatic-crafting-speed"].value
+local bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value
+
+
 data:extend({
 {
    type = "inserter",
@@ -83,16 +87,16 @@ data:extend({
    collision_box = { { -0.3, -0.3 }, { 0.3, 0.3 } },
    selection_box = { { -0.5, -0.5 }, { 0.5, 0.5 } },
    crafting_categories = { "pneumatic-liquify" },
-   crafting_speed = 3,
+   crafting_speed = crafting_speed,
    --result_inventory_size = 0,
    --source_inventory_size = 1,
    --ingredient_count = nil,
    se_allow_in_space = true,
-   bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
+   bottleneck_ignore = bottleneck_ignore,
    energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 2 },
+      emissions_per_minute = { pollution = 0.5 * crafting_speed }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -160,16 +164,16 @@ data:extend({
    collision_box = { { -0.3, -0.3 }, { 0.3, 0.3 } },
    selection_box = { { -0.5, -0.5 }, { 0.5, 0.5 } },
    crafting_categories = { "pneumatic-liquify" },
-   crafting_speed = 3,
+   crafting_speed = crafting_speed,
    result_inventory_size = 0,
    source_inventory_size = 1,
    ingredient_count = nil,
    se_allow_in_space = true,
-   bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
+   bottleneck_ignore = bottleneck_ignore,
    energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 2 },
+      emissions_per_minute = { pollution = 0.5 * crafting_speed }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -237,16 +241,16 @@ data:extend({
    collision_box = { { -0.3, -0.3 }, { 0.3, 0.3 } },
    selection_box = { { -0.5, -0.5 }, { 0.5, 0.5 } },
    crafting_categories = { "pneumatic-solidify" },
-   crafting_speed = 3,
+   crafting_speed = crafting_speed,
    result_inventory_size = 1,
    source_inventory_size = 0,
    ingredient_count = nil,
    se_allow_in_space = true,
-   bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value,
+   bottleneck_ignore = bottleneck_ignore,
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = 2 },
+      emissions_per_minute = { pollution = 0.5 * crafting_speed }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
