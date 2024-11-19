@@ -71,4 +71,12 @@ data:extend{
     default_value = true,
     order = "pneumatic-0",
   },
+  {
+   type = "int-setting",
+   name = "pneumatic-crafting-speed",
+   setting_type = "startup",
+   default_value = 3,
+   minimum_value = 1,
+   order = "pneumatic-01",
+  },
 }
