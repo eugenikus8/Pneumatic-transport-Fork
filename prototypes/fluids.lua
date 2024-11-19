@@ -37,8 +37,10 @@ for name, recipe in pairs(data.raw.recipe) do
 
       if checklocation.result then validItems[checklocation.result] = 1 end
       if checklocation.results then
-        for _, result in ipairs(checklocation.results) do
-          if result.type == "item" then validItems[result.name] = 1 end
+        if checklocation.results and type(checklocation.results) == "table" then
+          for _, result in ipairs(checklocation.results) do
+            if result.type == "item" then validItems[result.name] = 1 end
+          end
         end
       end
     end
@@ -51,8 +53,8 @@ for name, item in pairs(data.raw.item) do
     if item.rocket_launch_product.name then validItems[item.rocket_launch_product.name] = 1 end
   end
 
-  if item.rocket_launch_products then
-    for _, product in item.rocket_launch_products do
+  if item.rocket_launch_product then
+    for _, product in item.rocket_launch_product do
       if product[1] then validItems[product[1]] = 1 end
       if product.name then validItems[product.name] = 1 end 
     end
@@ -78,8 +80,7 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
 
   pneumaticFluid.type = "fluid"
   pneumaticFluid.name = "pneumatic-" .. item.name
-  -- pneumaticFluid.base_color = {0, 0, 0}
-  pneumaticFluid.base_color = {math.random(), math.random(), math.random()} 
+  pneumaticFluid.base_color = {math.random(), math.random(), math.random()}
   pneumaticFluid.default_temperature = 15
   pneumaticFluid.flow_color = {1, 1, 1}
   pneumaticFluid.subgroup = "pneumatic-" .. (item.subgroup or "other")
