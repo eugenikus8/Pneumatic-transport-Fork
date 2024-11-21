@@ -96,7 +96,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 0.5 * crafting_speed }
+      emissions_per_minute = { pollution = math.max(1, 0.15 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -173,7 +173,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 0.5 * crafting_speed }
+      emissions_per_minute = { pollution = math.max(1, 0.15 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -250,7 +250,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = 0.5 * crafting_speed }
+      emissions_per_minute = { pollution = math.max(1, 0.15 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
