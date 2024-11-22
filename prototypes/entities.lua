@@ -96,7 +96,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.15 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -151,6 +151,83 @@ data:extend({
 },
 
 {
+   type = "assembling-machine",
+   name = "pneumatic-outtake-filtered",
+   icon = "__pneumatic-transport__/graphics/icon/entities/outtake-filtered.png",
+   icon_size = 32,
+   flags = {"placeable-neutral", "placeable-player", "player-creation"},
+   minable = {mining_time = 0.2, result = "pneumatic-outtake-filtered"},
+   fast_replaceable_group = "pneumatic-io",
+   max_health = 200,
+   corpse = "small-remnants",
+   dying_explosion = "explosion",
+   collision_box = { { -0.3, -0.3 }, { 0.3, 0.3 } },
+   selection_box = { { -0.5, -0.5 }, { 0.5, 0.5 } },
+   crafting_categories = { "pneumatic-solidify" },
+   crafting_speed = crafting_speed,
+   --result_inventory_size = 0,
+   --source_inventory_size = 1,
+   --ingredient_count = nil,
+   se_allow_in_space = true,
+   bottleneck_ignore = bottleneck_ignore,
+   energy_source = {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
+   },
+   energy_usage = "19kW",
+   ingredient_count = 1,
+   graphics_set = {
+      animation = {
+         north = {
+            filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake-filtered/intake-filtered-up.png",
+            width = 66,
+            height = 74,
+            frame_count = 1,
+            shift = {0.05,0},
+         },
+         east = {
+            filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake-filtered/intake-filtered-right.png",
+            priority = "extra-high",
+            width = 46,
+            height = 46,
+            frame_count = 1,
+            shift = {0.03125, 0}
+         },
+         south = {
+            filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake-filtered/intake-filtered-down.png",
+            width = 66,
+            height = 72,
+            frame_count = 1,
+            shift = {-0.05,0},
+         },
+         west = {
+            filename = "__pneumatic-transport__/graphics/entity/pneumatic-outtake-filtered/intake-filtered-left.png",
+            priority = "extra-high",
+            width = 46,
+            height = 46,
+            frame_count = 1,
+            shift = {-0.03125, 0}
+         },
+      },
+   },
+   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+   working_sound = {
+      sound = { filename = "__base__/sound/pump.ogg", volume = 1 },
+      audible_distance_modifier = 0.5,
+      max_sounds_per_type = 3
+   },
+   fluid_boxes = {
+      {
+         production_type = "input",
+         pipe_covers = pipecoverspictures(),
+         volume = 100,
+         pipe_connections = { { flow_direction="input", direction = 0, position = {0, 0} } },
+      },
+   },
+},
+
+{
    type = "furnace",
    name = "pneumatic-intake",
    icon = "__pneumatic-transport__/graphics/icon/entities/intake.png",
@@ -173,7 +250,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.15 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -250,7 +327,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.15 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
