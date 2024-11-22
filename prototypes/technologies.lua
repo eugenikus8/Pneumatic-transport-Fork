@@ -16,10 +16,12 @@ end
 inserterTech = get_recipe_tech("inserter")
 if inserterTech then
   table.insert(data.raw.technology[inserterTech].effects, {type = "unlock-recipe", recipe = "pneumatic-intake"})
-  table.insert(data.raw.technology[inserterTech].effects, {type = "unlock-recipe", recipe = "pneumatic-intake-filtered"})
   table.insert(data.raw.technology[inserterTech].effects, {type = "unlock-recipe", recipe = "pneumatic-outtake"})
+  table.insert(data.raw.technology[inserterTech].effects, {type = "unlock-recipe", recipe = "pneumatic-intake-filtered"})
+  table.insert(data.raw.technology[inserterTech].effects, {type = "unlock-recipe", recipe = "pneumatic-outtake-filtered"})
 else
   data.raw.recipe["pneumatic-intake"].enabled = true
-  data.raw.recipe["pneumatic-intake-filtered"].enabled = true
   data.raw.recipe["pneumatic-outtake"].enabled = true
+  data.raw.recipe["pneumatic-intake-filtered"].enabled = true
+  data.raw.recipe["pneumatic-outtake-filtered"].enabled = true
 end
