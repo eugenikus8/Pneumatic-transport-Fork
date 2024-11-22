@@ -12,7 +12,7 @@ https://mods.factorio.com/mod/pneumatic-transport
 ![2024-11-23_002442](https://github.com/user-attachments/assets/c2c0e003-3706-4b04-bde4-0c109fb22fa7)
 
 ![2024-11-23_003502](https://github.com/user-attachments/assets/caa0f1a7-c662-4bd0-8f9d-712da7962931)
-Improvised 1 tube bus. Objects are liquefied and through Pneumatic outtake filtered are solidify in the appropriate industries.
+<br>Improvised 1 tube bus. Objects are liquefied and through Pneumatic outtake filtered are solidify in the appropriate industries.
 <br><br>
 
 ### Alternate name:
