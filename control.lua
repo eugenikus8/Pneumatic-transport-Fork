@@ -8,7 +8,7 @@ local compat_pickerextended = require("compat.pickerextended")
 
 --confirm that entity is a pneumatic building
 local function is_pneumatic(entity)
-  return entity and (entity.name == "pneumatic-intake" or entity.name == "pneumatic-outtake" or entity.name == "pneumatic-intake-filtered")
+  return entity and (entity.name == "pneumatic-intake" or entity.name == "pneumatic-outtake" or entity.name == "pneumatic-intake-filtered" or entity.name == "pneumatic-outtake-filtered")
 end
 
 local function is_pneumatic_inserter(entity)
@@ -38,7 +38,7 @@ end
 --adds a pneumatic-inserter to the given entity's location (based on type of entity and its orientation)
 local function add_inserter(entity)
   local insertername = "pneumatic-hidden-intake"
-  if entity.name == "pneumatic-outtake" then insertername = "pneumatic-hidden-outtake" end
+  if entity.name == "pneumatic-outtake" or entity.name == "pneumatic-outtake-filtered" then insertername = "pneumatic-hidden-outtake" end
 
   local new_inserter = entity.surface.create_entity{
     name = insertername,
@@ -117,7 +117,7 @@ end
 
 -- building recipe copy code (only works for intake as the outtake is a furnace style)
 local function on_pre_settings_pasted(ev)
-  if ev.destination.name == "pneumatic-intake-filtered" then
+  if ev.destination.name == "pneumatic-intake-filtered" or ev.destination.name == "pneumatic-outtake-filtered" then
     local selectedItem = nil
     if ev.source.type == "container" or ev.source.type == "infinity-container" or ev.source.type == "cargo-wagon" then
       selectedItem = find_next_item_from_inventory(ev.destination.get_recipe(), ev.source.get_inventory(defines.inventory.chest))
@@ -151,7 +151,7 @@ end
 
 -- paste fix post paste (finishes the building recipe copy code above)
 local function on_settings_pasted(ev)
-  if ev.destination.name == "pneumatic-intake-filtered" and not ev.destination.get_recipe() then
+  if ev.destination.name == "pneumatic-intake-filtered" or ev.destination.name == "pneumatic-outtake-filtered" and not ev.destination.get_recipe() then
     if pneumatic_recipe and not ev.destination.get_recipe() then
       paste_recipe(ev.destination, pneumatic_recipe, game.players[ev.player_index])
     end
