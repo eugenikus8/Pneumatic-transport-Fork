@@ -8,6 +8,13 @@ https://mods.factorio.com/mod/pneumatic-transport
 
 ![76825a51b5a36f5e9959a69cc299f5a0b1187b22](https://github.com/user-attachments/assets/613b444c-4bc1-47fd-bc05-af2034ac571b)
 
+![2024-11-23_001629](https://github.com/user-attachments/assets/dad7e26c-01c1-448c-b520-84d5859af9bd)
+add "Pneumatic outtake filtered"
+<br><br>
+
+![2024-11-23_002442](https://github.com/user-attachments/assets/c2c0e003-3706-4b04-bde4-0c109fb22fa7)
+<br>Improvised 1 tube bus. Objects are liquefied and through Pneumatic outtake filtered are solidify in the appropriate industries.
+<br><br>
 
 ### Alternate name:
 Liquify Everything!
