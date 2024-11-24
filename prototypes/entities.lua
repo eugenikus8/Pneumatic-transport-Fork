@@ -6,6 +6,31 @@ local empty_sheet = {
    frame_count = 1,
 }
 
+
+-- Circuit connection definitions
+circuit_connector_definitions["valve"] = circuit_connector_definitions.create_vector
+(
+  universal_connector_template,
+  {
+    { variation = 24,								-- низ		down	24 - правый бок, как у помпы
+      main_offset = util.by_pixel(-9, -8),
+      shadow_offset = util.by_pixel(11, 11),
+      show_shadow = true },
+    { variation = 18,								 -- лево	left
+      main_offset = util.by_pixel(-5, 0),
+      shadow_offset = util.by_pixel(11, 11),
+      show_shadow = true },
+    { variation = 24,								-- верх		up
+      main_offset = util.by_pixel(-9, -8),
+      shadow_offset = util.by_pixel(11, 9),
+      show_shadow = true },
+    { variation = 22,								-- право	right
+      main_offset = util.by_pixel(5, 0),
+      shadow_offset = util.by_pixel(11, 9),
+      show_shadow = true }
+  }
+)
+
 local crafting_speed = settings.startup["pneumatic-crafting-speed"].value
 local bottleneck_ignore = settings.startup["pneumatic-bottleneck-ignore"].value
 
@@ -100,6 +125,12 @@ data:extend({
    },
    energy_usage = "19kW",
    ingredient_count = 1,
+
+   circuit_wire_connection_points = circuit_connector_definitions["valve"].points,
+   circuit_connector_sprites = circuit_connector_definitions["valve"].sprites,
+   circuit_connector = circuit_connector_definitions["valve"],
+   circuit_wire_max_distance = default_circuit_wire_max_distance,
+
    graphics_set = {
       animation = {
          north = {
@@ -177,6 +208,12 @@ data:extend({
    },
    energy_usage = "19kW",
    ingredient_count = 1,
+
+   circuit_wire_connection_points = circuit_connector_definitions["valve"].points,
+   circuit_connector_sprites = circuit_connector_definitions["valve"].sprites,
+   circuit_connector = circuit_connector_definitions["valve"],
+   circuit_wire_max_distance = default_circuit_wire_max_distance,
+
    graphics_set = {
       animation = {
          north = {
