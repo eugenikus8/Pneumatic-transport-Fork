@@ -12,19 +12,19 @@ circuit_connector_definitions["valve"] = circuit_connector_definitions.create_ve
 (
   universal_connector_template,
   {
-    { variation = 24,								-- низ		down	24 - правый бок, как у помпы
+    { variation = 24,								-- down
       main_offset = util.by_pixel(-9, -8),
       shadow_offset = util.by_pixel(11, 11),
       show_shadow = true },
-    { variation = 18,								 -- лево	left
+    { variation = 18,								 -- left
       main_offset = util.by_pixel(-5, 0),
       shadow_offset = util.by_pixel(11, 11),
       show_shadow = true },
-    { variation = 24,								-- верх		up
+    { variation = 24,								-- up
       main_offset = util.by_pixel(-9, -8),
       shadow_offset = util.by_pixel(11, 9),
       show_shadow = true },
-    { variation = 22,								-- право	right
+    { variation = 22,								-- right
       main_offset = util.by_pixel(5, 0),
       shadow_offset = util.by_pixel(11, 9),
       show_shadow = true }
