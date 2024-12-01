@@ -2,7 +2,7 @@ Version 2.0.8
 Date: 2024-12-01
 
   Changes:
-    - add locale recipe name (pneumatic-intake-filtered, pneumatic-outtake-filtered)
+    - add localized recipe name (liquify and solidify)
 
   Known issues:
     - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
