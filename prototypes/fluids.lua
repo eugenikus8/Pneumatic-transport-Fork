@@ -104,6 +104,9 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
   table.insert(pneumaticRecipes, {
     type = "recipe",
     name = "pneumatic-liquify-"..name,
+
+    localised_name = {"recipe-name.pneumatic-liquify", item.localised_name or {"item-name." .. item.name}},  --add locale recipe name
+
     energy_required = 0.4,
     enabled = true,
     hide_from_player_crafting = true,
@@ -126,6 +129,9 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
   table.insert(pneumaticRecipes, {
     type = "recipe",
     name = "pneumatic-solidify-"..name,
+
+    localised_name = {"recipe-name.pneumatic-solidify", item.localised_name or {"item-name." .. item.name}},  --add locale recipe name
+
     energy_required = 0.4,
     enabled = true,
     hide_from_player_crafting = true,
