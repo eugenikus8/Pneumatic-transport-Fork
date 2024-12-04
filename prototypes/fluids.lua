@@ -80,6 +80,7 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
 
   pneumaticFluid.type = "fluid"
   pneumaticFluid.name = "pneumatic-" .. item.name
+  pneumaticFluid.hidden_in_factoriopedia = true
   pneumaticFluid.base_color = {math.random(), math.random(), math.random()}
   pneumaticFluid.default_temperature = 15
   pneumaticFluid.flow_color = {1, 1, 1}
@@ -109,6 +110,7 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
 
     energy_required = 0.4,
     enabled = true,
+    hidden_in_factoriopedia = true,    --hide in factoriopedia
     hide_from_player_crafting = true,
     hide_from_stats = true,
     ingredients = {
@@ -134,6 +136,7 @@ for _, tbl in ipairs({ data.raw.item, data.raw.module, data.raw.ammo, data.raw.a
 
     energy_required = 0.4,
     enabled = true,
+    hidden_in_factoriopedia = true,    --hide in factoriopedia
     hide_from_player_crafting = true,
     hide_from_stats = true,
     results = {
