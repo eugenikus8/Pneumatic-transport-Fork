@@ -1,11 +1,9 @@
 Version 2.0.8
 Date: 2024-12-01
 
-  Changes:
-    - add localized recipe name (liquify and solidify)
-
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
+   Changes:
+      - add localized recipe name (liquify and solidify)
+      - pneumaticFluid hidden in factoriopedia
 
 ---------------------------------------------------------------------------------------------------
 
@@ -15,9 +13,6 @@ Date: 2024-11-24
   Changes:
     - add circuit connector to "pneumatic-intake-filtered" and "pneumatic-outtake-filtered"
 
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
-
 ---------------------------------------------------------------------------------------------------
 
 Version 2.0.6
@@ -25,9 +20,6 @@ Date: 2024-11-22
 
   Changes:
     - add "Pneumatic outtake filtered"
-
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
 
 ---------------------------------------------------------------------------------------------------
 
@@ -37,9 +29,6 @@ Date: 2024-11-20
   Changes:
     - add crafting speed setup
 
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
-
 ---------------------------------------------------------------------------------------------------
 
 Version 2.0.4
@@ -47,9 +36,6 @@ Date: 2024-11-14
 
   Changes:
     - Random color fluids
-
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
 
 ---------------------------------------------------------------------------------------------------
 
@@ -59,9 +45,6 @@ Date: 2024-11-11
   Changes:
     - Add setting to ignore bottleneck indicator
 
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
-
 ---------------------------------------------------------------------------------------------------
 
 Version 2.0.2
@@ -70,9 +53,6 @@ Date: 2024-11-11
   Fixes:
     - Support on space ships
     - Sprites are not visible in the game (pneumatic in/out buildings (or liquidation / solidification buildings)
-
-  Known issues:
-    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
 
 ---------------------------------------------------------------------------------------------------
 
