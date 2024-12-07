@@ -5,7 +5,7 @@ local M = {}
 
 local function on_dolly_moved(event)
   local entity = event.moved_entity
-  if not (entity.name == "pneumatic-end-point-intake" or entity.name == "pneumatic-end-point-outtake" or entity.name == "pneumatic-end-point-intake-filtered") then
+  if not (entity.name == "pneumatic-intake" or entity.name == "pneumatic-outtake" or entity.name == "pneumatic-intake-filtered" or entity.name == "pneumatic-outtake-filtered") then
     return
   end
 
