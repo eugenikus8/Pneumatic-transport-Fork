@@ -12,19 +12,19 @@ circuit_connector_definitions["valve"] = circuit_connector_definitions.create_ve
 (
   universal_connector_template,
   {
-    { variation = 24,								-- down
+    { variation = 24,                           -- down
       main_offset = util.by_pixel(-9, -8),
       shadow_offset = util.by_pixel(11, 11),
       show_shadow = true },
-    { variation = 18,								 -- left
+    { variation = 18,                           -- left
       main_offset = util.by_pixel(-5, 0),
       shadow_offset = util.by_pixel(11, 11),
       show_shadow = true },
-    { variation = 24,								-- up
+    { variation = 24,                           -- up
       main_offset = util.by_pixel(-9, -8),
       shadow_offset = util.by_pixel(11, 9),
       show_shadow = true },
-    { variation = 22,								-- right
+    { variation = 22,                           -- right
       main_offset = util.by_pixel(5, 0),
       shadow_offset = util.by_pixel(11, 9),
       show_shadow = true }
@@ -120,7 +120,7 @@ data:extend({
    bottleneck_ignore = bottleneck_ignore,
    energy_source = {
       type = "electric",
-      usage_priority = "secondary-input",
+      usage_priority = "primary-input",
       emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
    },
    energy_usage = "19kW",
@@ -203,7 +203,7 @@ data:extend({
    bottleneck_ignore = bottleneck_ignore,
    energy_source = {
       type = "electric",
-      usage_priority = "secondary-input",
+      usage_priority = "primary-input",
       emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
    },
    energy_usage = "19kW",
@@ -286,7 +286,7 @@ data:extend({
    bottleneck_ignore = bottleneck_ignore,
    energy_source = {
       type = "electric",
-      usage_priority = "secondary-input",
+      usage_priority = "primary-input",
       emissions_per_minute = { pollution = math.max(1, 0.1 * crafting_speed) }
    },
    energy_usage = "19kW",

@@ -192,7 +192,7 @@ event.register(defines.events.on_built_entity, on_built)
 event.register(defines.events.on_robot_built_entity, on_built)
 event.register(defines.events.script_raised_built, on_built)
 event.register(defines.events.script_raised_revive, on_built)
-event.register(defines.events.on_space_platform_built_entity, on_built)		-- space platform built
+event.register(defines.events.on_space_platform_built_entity, on_built)    --add space platform built
 
 event.register(defines.events.on_player_rotated_entity, on_rotated)
 
@@ -200,7 +200,7 @@ event.register(defines.events.on_player_mined_entity, on_player_mined_entity)
 event.register(defines.events.on_robot_mined_entity, on_mined)
 event.register(defines.events.on_entity_died, on_mined)
 event.register(defines.events.script_raised_destroy, on_mined)
-event.register(defines.events.on_space_platform_mined_entity, on_mined)		-- space platform mined
+event.register(defines.events.on_space_platform_mined_entity, on_mined)    --add space platform mined
 
 event.register(defines.events.on_entity_settings_pasted, on_settings_pasted)
 event.register(defines.events.on_pre_entity_settings_pasted, on_pre_settings_pasted)
