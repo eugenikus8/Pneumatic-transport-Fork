@@ -291,6 +291,12 @@ data:extend({
    },
    energy_usage = "19kW",
    ingredient_count = 1,
+
+   circuit_wire_connection_points = circuit_connector_definitions["valve"].points,
+   circuit_connector_sprites = circuit_connector_definitions["valve"].sprites,
+   circuit_connector = circuit_connector_definitions["valve"],
+   circuit_wire_max_distance = default_circuit_wire_max_distance,
+
    graphics_set = {
       animation = {
          north = {
@@ -368,6 +374,12 @@ data:extend({
    },
    energy_usage = "19kW",
    ingredient_count = 1,
+
+   circuit_wire_connection_points = circuit_connector_definitions["valve"].points,
+   circuit_connector_sprites = circuit_connector_definitions["valve"].sprites,
+   circuit_connector = circuit_connector_definitions["valve"],
+   circuit_wire_max_distance = default_circuit_wire_max_distance,
+
    graphics_set = {
       animation = {
          north = {
