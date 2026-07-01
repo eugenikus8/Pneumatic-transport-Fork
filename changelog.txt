@@ -1,3 +1,14 @@
+Version 2.1.0
+Date: 2026-07-01
+
+  Changes:
+    - 2.1 update
+
+  Known issues:
+    - Quality does not support fluids in Space Age. All items with quality when liquefied will be converted to normal quality
+
+---------------------------------------------------------------------------------------------------
+
 Version 2.0.8
 Date: 2024-12-01
 

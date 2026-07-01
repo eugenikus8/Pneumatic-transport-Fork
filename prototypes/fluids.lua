@@ -166,7 +166,7 @@ for _, tbl in ipairs({
          results = {
             {type = "fluid", name = "pneumatic-" .. name, amount = quantity * fluidSize}
          },
-         category = "pneumatic-liquify",
+         categories = {"pneumatic-liquify"},
          overload_multiplier = 2
       })
 
@@ -185,7 +185,7 @@ for _, tbl in ipairs({
          ingredients = {
             {type = "fluid", name = "pneumatic-" .. name, amount = quantity * fluidSize}
          },
-         category = "pneumatic-solidify",
+         categories = {"pneumatic-solidify"},
          overload_multiplier = 2
       })
 

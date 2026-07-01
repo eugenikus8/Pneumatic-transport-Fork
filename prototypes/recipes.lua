@@ -20,7 +20,7 @@ data:extend({
       {type = "item", name = boardname, amount = 1},
    },
    results = {{type = "item", name = "pneumatic-intake", amount = 1}},
-   category = "crafting",
+   categories = {"crafting"},
    },
 
    {
@@ -35,7 +35,7 @@ data:extend({
       { type = "item", name = boardname, amount = 1 },
    },
    results = {{type = "item", name = "pneumatic-outtake", amount = 1}},
-   category = "crafting",
+   categories = {"crafting"},
    },
 
    {
@@ -50,7 +50,7 @@ data:extend({
       {type = "item", name = boardname, amount = 1},
    },
    results = {{type = "item", name = "pneumatic-intake-filtered", amount = 1}},
-   category = "crafting",
+   categories = {"crafting"},
    },
 
    {
@@ -65,7 +65,7 @@ data:extend({
       {type = "item", name = boardname, amount = 1},
    },
    results = {{type = "item", name = "pneumatic-outtake-filtered", amount = 1}},
-   category = "crafting",
+   categories = {"crafting"},
    },
 
 })

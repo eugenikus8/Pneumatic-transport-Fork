@@ -1,15 +1,15 @@
 {
-  "name": "Pneumatic-transport-Fork",
-  "version": "2.0.8",
-  "factorio_version": "2.0",
+  "name": "pneumatic-transport",
+  "version": "2.1.0",
+  "factorio_version": "2.1",
   "title": "Pneumatic Transport Fork",
-  "author": "eugenikus8",
+  "author": "Saienai, eugenikus8",
   "contact": "",
   "homepage": "",
   "description": "Removes all belts and adds pneumatic in/out stations (with built in inserters) that convert any/all items into fluid-like states for transport through pipes.\nAlternative lore: LIQUIFY EVERYTHING!!!!",
   "dependencies": 
 	[
-		"base >= 2.0.0",
+		"base >= 2.1.0",
 		"? space-age",
 		"? quality",
 		"? space-exploration",
