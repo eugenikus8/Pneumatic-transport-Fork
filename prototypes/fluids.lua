@@ -151,10 +151,20 @@ for _, tbl in ipairs({
          fluidSize = 100
       end
 
+      --add localised
+      local localised
+      if item.place_result then
+         localised = {"entity-name." .. item.place_result}
+      else
+         localised = {"item-name." .. item.name}
+      end
+      --==========
+
       table.insert(pneumaticRecipes, {
          type = "recipe",
          name = "pneumatic-liquify-" .. name,
-         localised_name = {"recipe-name.pneumatic-liquify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
+         --localised_name = {"recipe-name.pneumatic-liquify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
+         localised_name = {"recipe-name.pneumatic-liquify", localised},     --add localised_name recipes
          energy_required = 0.4,
          enabled = true,
          hidden_in_factoriopedia = true,     --add hide in factoriopedia
@@ -173,7 +183,8 @@ for _, tbl in ipairs({
       table.insert(pneumaticRecipes, {
          type = "recipe",
          name = "pneumatic-solidify-" .. name,
-         localised_name = {"recipe-name.pneumatic-solidify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
+         --localised_name = {"recipe-name.pneumatic-solidify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
+         localised_name = {"recipe-name.pneumatic-solidify", localised},     --add localised_name recipes
          energy_required = 0.4,
          enabled = true,
          hidden_in_factoriopedia = true,     --add hide in factoriopedia
