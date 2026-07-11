@@ -7,7 +7,7 @@ for _, dbl in ipairs({data.raw["furnace"], data.raw["container"], data.raw["infi
          elseif type(entity.additional_pastable_entities) == "string" then
             entity.additional_pastable_entities = {entity.additional_pastable_entities}
          end
-      
+
          -- Добавляем оба элемента в список
          table.insert(entity.additional_pastable_entities, "pneumatic-intake-filtered")
          table.insert(entity.additional_pastable_entities, "pneumatic-outtake-filtered")
