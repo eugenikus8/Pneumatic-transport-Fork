@@ -83,124 +83,137 @@ end
 
 pneumaticFluids = {}
 pneumaticRecipes = {}
-for _, tbl in ipairs({
-   data.raw.ammo,
-   data.raw.armor,
-   data.raw.capsule,
-   data.raw.item,
-   data.raw.module,
-   data.raw.tool,
-   data.raw["item-with-entity-data"],
-   data.raw["rail-planner"],
-   data.raw["repair-tool"]
-}) do
 
-   for name, item in pairs(tbl) do
-      if string.find(name, "-barrel") and name ~= "empty-barrel" then
-         goto continue
-      end
+local types = {
+   "ammo",
+   "armor",
+   "capsule",
+   "gun",
+   "item",
+   "item-with-entity-data",
+   "module",
+   "rail-planner",
+   "repair-tool",
+   "tool",
+}
 
-      if string.find(name, "textplate") or string.find(name, "deadlock-crate") then
-         goto continue
-      end
+for _, typeName in ipairs(types) do
+   local tbl = data.raw[typeName]
 
-      if not validItems[name] then
-         goto continue
-      end
-      pneumaticFluid = util.table.deepcopy(item)
+   if tbl then
+      for name, item in pairs(tbl) do
 
-      if item.place_result == nil then
-         pneumaticFluid.localised_name = {"fluid-name.pneumatic-fluid", item.localised_name or {"item-name." .. item.name}}
-      else
-         pneumaticFluid.localised_name = {"fluid-name.pneumatic-fluid", item.localised_name or {"entity-name." .. item.place_result}}
-      end
-
-      pneumaticFluid.type = "fluid"
-      pneumaticFluid.name = "pneumatic-" .. item.name
-      pneumaticFluid.hidden_in_factoriopedia = true      -- add hide in factoriopedia
-      pneumaticFluid.base_color = {math.random(), math.random(), math.random()}     -- add random color fluids
-      pneumaticFluid.default_temperature = 15
-      pneumaticFluid.flow_color = {1, 1, 1}
-      pneumaticFluid.subgroup = "pneumatic-" .. (item.subgroup or "other")
-
-      if item.icon ~= nil or item.icons ~= nil then
-         if item.icons == nil then
-            pneumaticFluid.icons = {{icon = item.icon, icon_size = item.icon_size}}
+         if string.find(name, "-barrel") and name ~= "empty-barrel" then
+            goto continue
          end
-         table.insert(pneumaticFluid.icons, {
-            icon = "__pneumatic-transport__/graphics/icon/fluids/water.png",
-            icon_mipmaps = 4,
-            icon_size = 64,
-            scale = 0.25,
-            shift = {12, 9}      --add shift
+
+         if string.find(name, "textplate") or string.find(name, "deadlock-crate") then
+            goto continue
+         end
+
+         if not validItems[name] then
+            goto continue
+         end
+
+         pneumaticFluid = util.table.deepcopy(item)
+
+         if item.place_result == nil then
+            pneumaticFluid.localised_name = {"fluid-name.pneumatic-fluid", item.localised_name or {"item-name." .. item.name}}
+         else
+            pneumaticFluid.localised_name = {"fluid-name.pneumatic-fluid", item.localised_name or {"entity-name." .. item.place_result}}
+         end
+
+         pneumaticFluid.type = "fluid"
+         pneumaticFluid.name = "pneumatic-" .. item.name
+         pneumaticFluid.hidden_in_factoriopedia = true      -- add hide in factoriopedia
+         pneumaticFluid.base_color = {math.random(), math.random(), math.random()}     -- add random color fluids
+         pneumaticFluid.default_temperature = 15
+         pneumaticFluid.flow_color = {1, 1, 1}
+         pneumaticFluid.subgroup = "pneumatic-" .. (item.subgroup or "other")
+
+         if item.icon ~= nil or item.icons ~= nil then
+            if item.icons == nil then
+               pneumaticFluid.icons = {{icon = item.icon, icon_size = item.icon_size}}
+            end
+
+            table.insert(pneumaticFluid.icons, {
+               icon = "__pneumatic-transport__/graphics/icon/fluids/water.png",
+               icon_mipmaps = 4,
+               icon_size = 64,
+               scale = 0.25,
+               shift = {12, 9}      --add shift
+            })
+         end
+
+         table.insert(pneumaticFluids, pneumaticFluid)
+
+         quantity = settings.startup["pneumatic-recipe-multiplier"].value
+         fluidSize = settings.startup["pneumatic-fluid-per-item"].value
+
+         if item.stack_size and quantity > item.stack_size / 5 then
+            quantity = item.stack_size / 5
+         end
+
+         if quantity < 1 then
+            quantity = 1
+         end
+
+         if heavyItems[item.name] then
+            quantity = 1
+            fluidSize = 100
+         end
+
+         --add localised
+         local localised
+         if item.place_result then
+            localised = {"entity-name." .. item.place_result}
+         else
+            localised = {"item-name." .. item.name}
+         end
+         --==========
+
+         table.insert(pneumaticRecipes, {
+            type = "recipe",
+            name = "pneumatic-liquify-" .. name,
+            --localised_name = {"recipe-name.pneumatic-liquify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
+            localised_name = {"recipe-name.pneumatic-liquify", localised},     --add localised_name recipes
+            energy_required = 0.4,
+            enabled = true,
+            hidden_in_factoriopedia = true,     --add hide in factoriopedia
+            hide_from_player_crafting = true,
+            hide_from_stats = true,
+            ingredients = {
+               {type = "item", name = name, amount = quantity}
+            },
+            results = {
+               {type = "fluid", name = "pneumatic-" .. name, amount = quantity * fluidSize}
+            },
+            categories = {"pneumatic-liquify"},
+            overload_multiplier = 2
          })
+
+         table.insert(pneumaticRecipes, {
+            type = "recipe",
+            name = "pneumatic-solidify-" .. name,
+                     --localised_name = {"recipe-name.pneumatic-solidify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
+            localised_name = {"recipe-name.pneumatic-solidify", localised},     --add localised_name recipes
+            energy_required = 0.4,
+            enabled = true,
+            hidden_in_factoriopedia = true,     --add hide in factoriopedia
+            hide_from_player_crafting = true,
+            hide_from_stats = true,
+            results = {
+               {type = "item", name = name, amount = quantity}
+            },
+            ingredients = {
+               {type = "fluid", name = "pneumatic-" .. name, amount = quantity * fluidSize}
+            },
+            categories = {"pneumatic-solidify"},
+            overload_multiplier = 2
+         })
+
+         ::continue::
       end
-
-      table.insert(pneumaticFluids, pneumaticFluid)
-
-      quantity = settings.startup["pneumatic-recipe-multiplier"].value
-      fluidSize = settings.startup["pneumatic-fluid-per-item"].value
-      if item.stack_size and quantity > item.stack_size / 5 then
-         quantity = item.stack_size / 5
-      end
-      if quantity < 1 then
-         quantity = 1
-      end
-      if heavyItems[item.name] then
-         quantity = 1
-         fluidSize = 100
-      end
-
-      --add localised
-      local localised
-      if item.place_result then
-         localised = {"entity-name." .. item.place_result}
-      else
-         localised = {"item-name." .. item.name}
-      end
-      --==========
-
-      table.insert(pneumaticRecipes, {
-         type = "recipe",
-         name = "pneumatic-liquify-" .. name,
-         --localised_name = {"recipe-name.pneumatic-liquify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
-         localised_name = {"recipe-name.pneumatic-liquify", localised},     --add localised_name recipes
-         energy_required = 0.4,
-         enabled = true,
-         hidden_in_factoriopedia = true,     --add hide in factoriopedia
-         hide_from_player_crafting = true,
-         hide_from_stats = true,
-         ingredients = {
-            {type = "item", name = name, amount = quantity}
-         },
-         results = {
-            {type = "fluid", name = "pneumatic-" .. name, amount = quantity * fluidSize}
-         },
-         categories = {"pneumatic-liquify"},
-         overload_multiplier = 2
-      })
-
-      table.insert(pneumaticRecipes, {
-         type = "recipe",
-         name = "pneumatic-solidify-" .. name,
-         --localised_name = {"recipe-name.pneumatic-solidify", item.localised_name or {"item-name." .. item.name}},     --add localised_name recipes
-         localised_name = {"recipe-name.pneumatic-solidify", localised},     --add localised_name recipes
-         energy_required = 0.4,
-         enabled = true,
-         hidden_in_factoriopedia = true,     --add hide in factoriopedia
-         hide_from_player_crafting = true,
-         hide_from_stats = true,
-         results = {
-            {type = "item", name = name, amount = quantity}
-         },
-         ingredients = {
-            {type = "fluid", name = "pneumatic-" .. name, amount = quantity * fluidSize}
-         },
-         categories = {"pneumatic-solidify"},
-         overload_multiplier = 2
-      })
-
-      ::continue::
    end
 end
 

@@ -10,25 +10,25 @@ local empty_sheet = {
 -- Circuit connection definitions
 circuit_connector_definitions["valve"] = circuit_connector_definitions.create_vector
 (
-  universal_connector_template,
-  {
-    { variation = 24,                           -- down
-      main_offset = util.by_pixel(-9, -8),
-      shadow_offset = util.by_pixel(11, 11),
-      show_shadow = true },
-    { variation = 18,                           -- left
-      main_offset = util.by_pixel(-5, 0),
-      shadow_offset = util.by_pixel(11, 11),
-      show_shadow = true },
-    { variation = 24,                           -- up
-      main_offset = util.by_pixel(-9, -8),
-      shadow_offset = util.by_pixel(11, 9),
-      show_shadow = true },
-    { variation = 22,                           -- right
-      main_offset = util.by_pixel(5, 0),
-      shadow_offset = util.by_pixel(11, 9),
-      show_shadow = true }
-  }
+   universal_connector_template,
+   {
+      { variation = 24,                           -- down
+         main_offset = util.by_pixel(-9, -8),
+         shadow_offset = util.by_pixel(11, 11),
+         show_shadow = true },
+      { variation = 18,                           -- left
+         main_offset = util.by_pixel(-5, 0),
+         shadow_offset = util.by_pixel(11, 11),
+         show_shadow = true },
+      { variation = 24,                           -- up
+         main_offset = util.by_pixel(-9, -8),
+         shadow_offset = util.by_pixel(11, 9),
+         show_shadow = true },
+      { variation = 22,                           -- right
+         main_offset = util.by_pixel(5, 0),
+         shadow_offset = util.by_pixel(11, 9),
+         show_shadow = true }
+   }
 )
 
 local crafting_speed = settings.startup["pneumatic-crafting-speed"].value
@@ -121,7 +121,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.05 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.02 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -204,7 +204,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.05 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.02 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -287,7 +287,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.05 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.02 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,
@@ -370,7 +370,7 @@ data:extend({
    energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = { pollution = math.max(1, 0.05 * crafting_speed) }
+      emissions_per_minute = { pollution = math.max(1, 0.02 * crafting_speed) }
    },
    energy_usage = "19kW",
    ingredient_count = 1,

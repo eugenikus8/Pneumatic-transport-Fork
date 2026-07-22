@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\migrations",
+    "\\prototypes"
   ],
+  "SelectedNode": "\\prototypes\\entities.lua",
   "PreviewInSolutionExplorer": false
 }
